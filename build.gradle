@@ -32,9 +32,10 @@ compileKotlin {
 }
 
 processResources {
-    expand project.properties
+    filesMatching("**/plugin.xml") {
+        expand project.properties
+    }
 }
-
 buildscript {
     ext.kotlin_version = '1.1.51'
     repositories {
